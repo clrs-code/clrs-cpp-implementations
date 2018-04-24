@@ -18,7 +18,6 @@ public:
     heapDS_heapsort(vector<int> data)
     {
         A.insert(A.end(), data.begin(), data.end());
-        display();
     }
 
     void max_heapify(int i, int size)
@@ -57,7 +56,7 @@ public:
 
     void display()
     {
-        cout << "\nContents of A:\n";
+        cout << "Contents of A after sorting:\n";
         for (auto a : A)
             cout << a << " ";
     }
@@ -65,9 +64,17 @@ public:
 
 int main()
 {
-    vector<int> data = { 5, 1, 8, 3, 4, 9, 10 };
+    vector<int> data = { 5, 1, 8, 3, 4, 9, 10, 2, -2, -4, -6, -1, 0 };
     heapDS_heapsort heap(data);
     heap.heap_sort();
     heap.display();
     return 0;
 }
+
+/*
+OUTPUT:
+Contents of A after sorting:
+-6 -4 -2 -1 0 1 2 3 4 5 8 9 10 
+
+Run and see at: http://rextester.com/GGA26490
+*/
